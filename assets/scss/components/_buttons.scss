@@ -146,5 +146,23 @@ BUTTONS
 	line-height:50px;
 	font-weight:$bold;
 	border-bottom:3px solid #93000f;
-	color:#ffffff;
+	color:$white;
+	position:relative;
+	
+	.btn-content:after {
+	 	@include transition(all 0.4s $easeOutCubic);
+	 	@extend .position-top-left;
+	 	content:"";
+	 	display:block;
+	 	height:100%;
+	 	width:0px;
+	 	z-index:1;
+	 	border-bottom:3px solid $white;
+	 }
+}
+
+.btn-line:hover {
+	.btn-content:after {
+		width:100%;
+	}
 }

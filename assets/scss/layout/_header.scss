@@ -181,7 +181,7 @@ header {
 
 .animate-in {
 	header {
-		
+
 	}
 }
 
@@ -196,6 +196,7 @@ TWIN MENU ACTIVE
 body.body-menu-active {
 	header {
 		background:$blue;
+		height:70px;
 	}
 
 	.logo {

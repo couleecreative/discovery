@@ -29,7 +29,16 @@ MENU
 		padding-top:120px;
 	}
 
-	.twin-institutes { @include breakpoint(medium) { display:none } }
+	.twin-institutes { 
+		@include breakpoint(medium) { display:none } 
+	}
+
+	.container {
+		@extend .position-center;
+		height:460px;
+
+		@include breakpoint(large) { height:410px; }
+	}
 
 	.mobile-menu {
 		display:none;
@@ -84,12 +93,12 @@ MENU
 		left:0px;
 		bottom:0px;
 		line-height:30px;
-		padding:30px 0px;
+		padding:20px 0px;
 		text-align:center;
 		color:$white;
 		text-transform:uppercase;
 		letter-spacing:1px;
-		font-size:14px;
+		font-size:12px;
 
 		@include breakpoint(small) { display:none; }
 
@@ -97,11 +106,11 @@ MENU
 			display:inline-block;
 			margin-left:10px;
 			margin-right:10px;
-			font-weight:$bold;
 		}
 
 		.phone {
 			color:$white;
+			font-wight:$bold;
 		}
 	}
 }

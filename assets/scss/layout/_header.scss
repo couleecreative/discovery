@@ -1,0 +1,256 @@
+/* 
+
+-------------------------------------------------------------
+
+HEADER
+
+*/
+
+header {
+	@include transition(all 0.55s $easeOutCubic);
+	position:fixed;
+	width:100%;
+	left:0px;
+	top:0px;
+	height:100px;
+	background:#f4f4f4;
+	z-index:300;
+
+	@include breakpoint(xlarge) {
+		width:1800px;
+		margin:auto;
+		left:0px;
+		right:0px;
+	}
+
+	@include breakpoint(medium) { 
+		height:80px;
+	}
+
+	@include breakpoint(small) { 
+		height:60px;
+	}
+
+	.logo {
+		@include transition(all 0.55s $easeOutCubic);
+		@extend .position-center;
+		font-family:$secondary-font-family;
+		font-size:20px;
+		left:50px;
+		right:auto;
+		width:85px;
+		height:40px;
+
+		@include breakpoint(medium) { 
+			left:20px;
+		}
+
+		@include breakpoint(medium) { 
+			width:65px;
+			height:31px;
+		}
+
+		svg {
+			path { @include transition(all 0.25s $easeOutCubic); }
+		}
+
+		a {
+			display:block;
+			position:relative;
+			color:$blue;
+		}
+
+		span {
+			@extend .position-top-left;
+			@include transition(all 0.25s $easeOutCubic);
+			left:95px;
+			display:block;
+			line-height:40px;
+
+			@include breakpoint(medium) { 
+				left:75px;
+				line-height:31px;
+			}
+
+			@include breakpoint(small) { 
+				opacity:0;
+				visibility:hidden;
+			}
+		}
+	}
+
+	.menu-btn {
+		@extend .position-center;
+		@include transition(all 0.75s $easeOutQuint);
+		left:auto;
+		width:30px;
+		height:20px;
+		right:50px;
+
+		@include breakpoint(medium) { 
+			right:20px;
+		}
+
+		a {
+			display:block;
+			height:20px;
+		}
+
+		a:hover {
+			span, span:before, span:after {
+				background:$blue;
+			}
+		}
+
+		span, span:before, span:after {
+			@include transition(all 0.75s $easeOutQuint);
+			position:absolute;
+			top:10px;
+			left:0px;
+			display:block;
+			height:2px;
+			width:20px;
+			background:#929292;
+			content:"";
+		}
+
+		span:before { top:-5px; }
+
+		span:after { top:5px; }
+	}
+
+	.search-btn {
+		@extend .position-center;
+		left:auto;
+		right:95px;
+		width:40px;
+		height:40px;
+		display:block;
+
+		@include breakpoint(medium) { 
+			right:65px;
+		}
+
+		svg {
+			width:40px;
+			height:40px;
+
+			path { 
+				@include transition(all 0.75s $easeOutQuint);
+				fill:#939393; 
+			}
+		}
+	}
+
+	.search-btn:hover {
+		svg {
+			path { fill:$blue; }
+		}
+	}
+
+	.event-calendar {
+		@extend .position-center;
+		left:auto;
+		text-align:center;
+		width:160px;
+		font-size:12px;
+		padding:0px 15px;
+		right:150px;
+		line-height:40px;
+		height:40px;
+
+		@include breakpoint(large) {
+			width:90px;
+		}
+
+		@include breakpoint(medium) { 
+			right:120px;
+		}
+
+		@include breakpoint(small) { 
+			display:none;
+		}
+
+		span {
+			@include breakpoint(large) {
+				display:none;
+			}
+		}
+	}
+}
+
+.animate-in {
+	header {
+		
+	}
+}
+
+/*
+
+-------------------------------------------------------------
+
+TWIN MENU ACTIVE
+
+*/
+
+body.body-menu-active {
+	header {
+		background:$blue;
+	}
+
+	.logo {
+		span { color:$white; }
+
+		svg {
+			path { fill:$white; }
+		}
+	}
+
+	.search-btn {
+		svg {
+			path { fill:$white; }
+		}
+	}
+
+	.search-btn:hover {
+		svg {
+			path { fill:$red; }
+		}
+	}
+
+	.menu-btn {
+		span, span:before, span:after { background:$white; }
+
+		span { @include transform(rotate(45deg)); }
+
+		span:before { top:0px; }
+
+		span:after { 
+			@include transform(rotate(-90deg));
+			top:0px; 
+		}
+	}
+
+	.menu-btn:hover {
+		span, span:before, span:after {
+			background:$red;
+		}
+	}
+}
+
+
+/*
+
+-------------------------------------------------------------
+
+HEADER SCROLL ACTIVE
+
+*/
+
+header.header-active {
+	height:70px;
+
+	@include breakpoint(small) { 
+		height:60px;
+	}
+}

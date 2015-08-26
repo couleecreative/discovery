@@ -1,0 +1,123 @@
+/* 
+
+-------------------------------------------------------------
+
+NAVIGATION
+
+*/
+
+nav.navigation {
+	@include transition(all 0.25s $easeOutCubic);
+	@extend .position-center;
+	width:100%;
+	text-align:center;
+	height:30px;
+
+	@include breakpoint(medium) { 
+		opacity:0;
+		visibility:hidden;
+	}
+
+	a {
+		@include transition(all 0.55s $easeOutCubic);
+		color:$blue;
+		text-decoration:none;
+		font-size:14px;
+		text-transform:uppercase;
+		letter-spacing:1px;
+		margin:0% 1%;
+		display:inline-block;
+		border-bottom:4px solid #f4f4f4;
+		line-height:30px;
+
+		@include breakpoint(large) {
+			font-size:13px;
+		}
+	}
+
+	a:hover, a.active {
+		border-bottom:4px solid $red;
+	}
+}
+
+
+/*
+
+-------------------------------------------------------------
+
+TWIN MENU ACTIVE
+
+*/
+
+body.body-menu-active {
+	nav.navigation {
+		a {
+			color:$white;
+			border-bottom:4px solid $blue;
+		}
+
+		a:hover { 
+			border-bottom:4px solid $red;
+		}
+	}
+}
+
+/* 
+
+-------------------------------------------------------------
+
+DROPDOWN 
+
+*/
+
+nav.dropdown {
+	position:fixed;
+	left:0px;
+	top:0px;
+	background:#f4f4f4;
+	width:100%;
+	z-index:-1;
+	padding:100px 0px;
+	padding-top:130px;
+
+	// animation attributes
+	@include transition(all 0.55s $easeOutCubic);
+	@include shiftY(-100px);
+	opacity:0;
+
+	.row {
+		// animation attributes
+		@include transition(all 0.55s $easeOutCubic);
+		@include shiftY(-100px);
+		opacity:0;
+	}
+}
+
+nav.dropdown-search {
+	text-align:center;
+	padding-bottom:80px;
+
+	.search-box {
+		font-family:$secondary-font-family;
+		font-size:50px;
+		background:transparent;
+		width:100%;
+		border:none;
+		text-align: center;
+
+		@include breakpoint(small) {
+			font-size:30px;
+		}
+	}
+}
+
+nav.dropdown-active {
+	@include shiftY(0px);
+	opacity:1;
+	z-index:99;
+
+	.row {
+		opacity:1;
+		@include shiftY(0px);
+	}
+}

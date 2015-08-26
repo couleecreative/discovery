@@ -1,0 +1,124 @@
+/* 
+
+-------------------------------------------------------------
+
+EVENT SLIDER
+
+*/
+
+.home-events {
+	background:$red;
+	padding:150px 0px;
+	padding-bottom:250px;
+	text-align:center;
+	color:#ffffff;
+	position:relative;
+
+	@include breakpoint(medium) { 
+		padding:100px 0px;
+		padding-bottom:200px;
+	}
+
+	@include breakpoint(small) { 
+		padding-bottom:250px;
+	}
+
+	.event-slider {
+		width:100%;
+		text-align:center;
+		height:300px;
+		position:relative;
+		cursor:move;
+
+		@include breakpoint(small) { 
+			height:600px;
+		}
+
+		.slide {
+			.item {
+				height:100%;
+				width:100%;
+			}
+		}
+	}
+
+	.event-date {
+		color:#d77e87;
+		display:block;
+	}
+
+	.event-nav {
+		position:absolute;
+		left:0px;
+		bottom:0px;
+		width:100%;
+		height:110px;
+		background:#f4f4f4;
+
+		.container { height:100%; }
+
+		.btn-circle {
+			@extend .position-center;
+			display:block;
+		}
+
+		.event-prev {
+			right:auto;
+
+			svg {
+				@include transform(rotate(90deg));
+			}
+		}
+
+		.event-next {
+			left:auto;
+
+			svg {
+				@include transform(rotate(-90deg));
+			}
+		}
+
+		.event-type {
+			vertical-align:top;
+			line-height:110px;
+			display:inline-block;
+			color:#b4b4b4;
+			letter-spacing:1px;
+			font-weight:$bold;
+			margin:0px 10px;
+			font-size:14px;
+
+			@include breakpoint(small) { 
+				display:none;
+			}
+		}
+
+		.event-type-active, .event-type:hover { color:$blue; }
+	}
+
+	b {
+		letter-spacing:1px;
+		font-size:16px;
+		display:block;
+		margin-bottom:60px;
+	}
+
+	h3 {
+		color:#ffffff;
+
+		span { color:#ffffff; }
+	}
+}
+
+
+/*
+
+-------------------------------------------------------------
+
+ANIMATE EVENT SLIDER
+
+*/
+
+.animate-home-events {
+
+}

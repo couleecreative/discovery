@@ -1,0 +1,132 @@
+/* 
+
+-------------------------------------------------------------
+
+MENU
+
+*/
+
+.menu {
+	@extend .position-center;
+	position:fixed;
+	width:1700px / 1800px * 100%;
+	background:#f4f4f4;
+	visibility:hidden;
+	z-index:-10;
+	padding-top:14%;
+	overflow:scroll;
+	
+	// animation attributes
+	@include transition(all 0.55s $easeOutCubic);
+	opacity:0;
+
+	@include breakpoint(xlarge) { width:1700px; }
+
+	@include breakpoint(large) { padding-top:20%; }
+
+	@include breakpoint(medium) {
+		width:100%;
+		padding-top:120px;
+	}
+
+	.twin-institutes { @include breakpoint(medium) { display:none } }
+
+	.mobile-menu {
+		display:none;
+		text-align:center;
+
+		// animation attributes
+		@include transition(all 0.55s $easeOutCubic);
+		@include shiftY(-100px);
+		opacity:0;
+
+		@include breakpoint(medium) { 
+			display:block; 
+			padding-bottom:100px;
+		}
+	}
+
+	.twin-logo {
+		width:70%;
+		margin-bottom:10px;
+		display:block;
+
+		@include breakpoint(medium) { 
+			width:300px; 
+			margin:20px auto;
+		}
+
+		@include breakpoint(small) { width:50%; }
+	}
+
+	.row {
+		// animation attributes
+		@include transition(all 0.55s $easeOutCubic);
+		@include shiftY(-100px);
+		opacity:0;
+	}
+
+	.col-4 {
+		// animation attributes
+		@include transition(all 0.45s $easeOutCubic);
+		@include shiftY(-50px);
+		opacity:0;
+	}
+
+	ul.nav-list {
+		@include breakpoint(medium) { margin-bottom:40px; }
+	}
+
+	.bottom {
+		background:$blue;
+		width:100%;
+		position:fixed;
+		left:0px;
+		bottom:0px;
+		line-height:30px;
+		padding:30px 0px;
+		text-align:center;
+		color:$white;
+		text-transform:uppercase;
+		letter-spacing:1px;
+		font-size:14px;
+
+		@include breakpoint(small) { display:none; }
+
+		span {
+			display:inline-block;
+			margin-left:10px;
+			margin-right:10px;
+			font-weight:$bold;
+		}
+
+		.phone {
+			color:$white;
+		}
+	}
+}
+
+
+/*
+
+-------------------------------------------------------------
+
+MENU ACTIVE
+
+*/
+
+.body-menu-active {
+	.menu {
+		@include transform(translate3d(0px,0px,0px));
+		opacity:1;
+		visibility:visible;
+		z-index:200;
+		overflow-scrolling:touch;
+		-webkit-overflow-scrolling:touch;
+
+		.row, .col-4, .mobile-menu {
+			@include shiftY(0px);
+			opacity:1;
+		}
+	}
+}

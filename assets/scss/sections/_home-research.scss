@@ -1,0 +1,71 @@
+/* 
+
+-------------------------------------------------------------
+
+RESEARCH
+
+*/
+
+.research {
+	background:url(../img/research-bg.jpg) top center no-repeat;
+	background-size:cover;
+	padding:250px 0px;
+	text-align:center;
+	position:relative;
+
+
+	@include breakpoint(large) {
+		padding:200px 0px;
+	}
+
+	@include breakpoint(medium) {
+		padding:150px 0px;
+	}
+
+	@include breakpoint(small) {
+		padding-bottom:100px;
+	}
+
+	.row {
+		// animation attributes
+		@include transition(all 1s $easeOutQuint);
+		@include shiftY(100px);
+		opacity:0;
+
+		.col-2 {
+			@include breakpoint(small) {
+				margin-bottom:40px;
+			}
+		}
+	}
+
+	.row-last {
+		padding-top:30px;
+
+		// animation attributes
+		@include transition-delay(0.25s);
+	}
+
+	b {
+		font-weight:$medium;
+		letter-spacing:1px;
+		text-transform:uppercase;
+		color:$blue;
+	}
+}
+
+
+/*
+
+-------------------------------------------------------------
+
+ANIMATE RESEARCH
+
+*/
+
+.animate-research {
+	.row {
+		@include shiftY(0px);
+		opacity:1;
+	}
+}

@@ -1,0 +1,103 @@
+/* 
+
+-------------------------------------------------------------
+
+WELCOME
+
+*/
+
+.welcome {
+	background:#f4f4f4;
+	padding:200px 0px;
+
+	@include breakpoint(medium) {
+		padding-bottom:100px;
+	}
+
+	@include breakpoint(small) {
+		padding-top:140px;
+		padding-bottom:50px;
+	}
+
+	.gather {
+		@include clearfix;
+		position:relative;
+		padding-bottom:235px;
+
+		@include breakpoint(small) { padding-bottom:55px; }
+
+		.gather-copy {
+			width:480px / 1200px * 100%;
+			float:right;
+			z-index:5;
+
+			// animation attributes
+			@include transition(all 1s $easeOutQuint);
+			@include shiftY(100px);
+			opacity:0;
+
+			@include breakpoint(medium) {
+				float:none;
+				margin:auto;
+				text-align:center;
+			}
+
+			@include breakpoint(small) { width:100%; }
+		}
+
+		.image-small {
+			position:absolute;
+			width:290px / 1200px * 100%;
+			left:224px / 1200px * 100%;
+			bottom:-6px;
+			z-index:5;
+
+			// animation attributes
+			@include transition(all 1.25s $easeOutQuint);
+			@include shiftY(250px);
+			opacity:0;
+
+			@include breakpoint(small) { display:none; }
+		}
+
+		.giant-text {
+			position:absolute;
+			left:50px / 1200px * 100%;
+			bottom:-20%;
+			z-index:0;
+		}
+	}
+
+	.town-center {
+		.giant-text {
+			position:absolute;
+			left:510px / 1200px * 100%;
+			bottom:-20%;
+			z-index:0;
+
+
+			@include breakpoint(medium) {
+				bottom:-10%;
+			}
+		}
+	}
+}
+
+
+/*
+
+-------------------------------------------------------------
+
+ANIMATE RESEARCH
+
+*/
+
+.animate-welcome {
+
+	.gather {
+		.gather-copy, .image-small {
+			@include shiftY(0px);
+			opacity:1;
+		}
+	}
+}

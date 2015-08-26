@@ -1,0 +1,118 @@
+/* 
+
+-------------------------------------------------------------
+
+FOOTER
+
+*/
+
+footer {
+	padding:120px 0px;
+	padding-bottom:350px;
+	background:$blue;
+	color:#5a6e79;
+	position:relative;
+
+	@include breakpoint(xlarge) {
+		width:1700px;
+		margin:auto;
+	}
+
+	@include breakpoint(small) { 
+		padding-top:60px;
+		text-align:center; 
+		padding-bottom:400px;
+	}
+
+	.bottom {
+		@extend .borderbox;
+		position:absolute;
+		bottom:0px;
+		left:0px;
+		width:100%;
+		background:#f4f4f4;
+		line-height:30px;
+		padding:50px 0px;
+
+		.container {
+			@extend .borderbox; 
+
+			@include breakpoint(large) {
+				padding-right:200px;
+			}
+
+			@include breakpoint(small) {
+				padding-right:0px;
+			}
+		}
+
+		span {
+			display:inline-block;
+			margin-right:20px;
+		}
+
+		.phone {
+			color:$blue;
+			font-weight:$bold;
+		}
+	}
+
+	.logo {
+		width:85px;
+		height:40px;
+		margin-top:-15px;
+
+		@include breakpoint(small) {
+			width:200px;
+			height:94px;
+			margin:auto;
+			margin-bottom:80px;
+		}
+	}
+
+	.social {
+		@extend .position-top-right;
+		top:-20px;
+		height:50px;
+		width:300px;
+		text-align:right;
+
+		@include breakpoint(large) {
+			top:-1px;
+		}
+
+		@include breakpoint(small) {
+			position:relative;
+			text-align:center;
+			width:100%;
+			left:auto;
+			top:auto;
+			margin-top:30px;
+		}
+	}
+
+	.nav-list {
+		@include breakpoint(small) { margin-bottom:60px; }
+
+		a {
+			color:#5a6e79;
+			border-bottom:2px solid #253138;
+		}
+
+		a:hover {
+			color:$white;
+		}
+	}
+
+	.btn-arrow {
+		color:$white;
+
+		span.icon {
+			border:3px solid #253138;
+		}
+	}
+
+	h4 { 
+		color:#ffffff;
+	}
+}

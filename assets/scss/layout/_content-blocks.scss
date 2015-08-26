@@ -1,0 +1,157 @@
+/* 
+
+-------------------------------------------------------------
+
+CONTENT BLOCKS
+
+*/
+
+.content-block {
+	position:relative;
+	height:580px;
+	z-index:5;
+
+	@include breakpoint(large) {
+		height:480px;
+	}
+
+	@include breakpoint(small) { 
+		height:auto;
+		margin-bottom:50px;
+		text-align:center;
+	}
+
+	.copy {
+		@extend .col-3;
+		margin:0%;
+		padding-top:12%;
+
+		// animation attributes
+		@include transition(all 1s $easeOutQuint);
+		@include shiftY(100px);
+		opacity:0;
+
+		@include breakpoint(small) { 
+			margin-bottom:40px;
+		}
+	}
+
+	.image-large {
+		position:absolute;
+		overflow:hidden;
+		height:100%;
+		width:986px;
+		z-index:5;
+
+		// animation attributes
+		@include transition(all 1.25s $easeOutQuint);
+		@include shiftY(250px);
+		opacity:0;
+
+		@include breakpoint(small) { 
+			height:auto;
+			width:100%;
+			top:auto;
+			position:relative;
+		}
+	}
+
+	.image-small {
+		position:absolute;
+		overflow:hidden;
+		width:514px / 1200px * 100%;
+		z-index:5;
+
+		// animation attributes
+		@include transition(all 1.25s $easeOutQuint);
+		@include shiftY(250px);
+		opacity:0;
+
+		@include breakpoint(small) { 
+			height:auto;
+			width:auto;
+			top:auto;
+			position:relative;
+		}
+	}
+
+	.logo-warf {
+		@include border-radius(100%);
+		@extend .position-center;
+		z-index:5;
+		padding:30px;
+		width:200px;
+		height:200px;
+		background:$red;
+
+		// animation attributes
+		@include transition(all 1s $easeOutQuint);
+		@include transition-delay(0.25s);
+		@include scale(0.5);
+		opacity:0;
+
+		@include breakpoint(large) { 
+			width:100px;
+			height:100px;
+		}
+	}
+}
+
+.content-block-active {
+
+	.copy, .image-large, .image-small {
+		@include shiftY(0px);
+		opacity:1;
+	}
+
+	.logo-warf {
+		@include scale(1);
+		opacity:1;
+	}
+}
+
+.offset-right {
+
+	.image-large {
+		left:42.8333%;
+
+		@include breakpoint(small) { 
+			left:auto;
+		}
+	}
+
+	.image-small {
+		right:0%;
+
+		@include breakpoint(small) { 
+			right:auto;
+		}
+	}
+}
+
+.offset-left {
+
+	.copy {
+		float:right;
+
+		@include breakpoint(small) { 
+			float:none;
+		}
+	}
+
+	.image-large {
+		right:42.8333%;
+
+		@include breakpoint(small) { 
+			right:auto;
+		}
+	}
+
+	.image-small {
+		left:0%;
+
+		@include breakpoint(small) { 
+			left:auto;
+		}
+	}
+}

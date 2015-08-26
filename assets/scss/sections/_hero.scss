@@ -1,0 +1,201 @@
+/* 
+
+-------------------------------------------------------------
+
+HERO
+
+*/
+
+.hero {
+	padding-bottom:61%;
+	background:$blue url(../img/hero-bg.jpg) top center no-repeat;
+	background-size:cover;
+	position:relative;
+
+	@include breakpoint(large) {
+		padding-bottom:70%;
+	}
+
+	@include breakpoint(medium) {
+		padding-bottom:80%;
+	}
+
+	@include breakpoint(small) {
+		height:700px;
+		padding:0px;
+	}
+
+	.intro {
+		@extend .position-center;
+		height:320px;
+		width:100%;
+		text-align:center;
+		color:#ffffff;
+
+		// animation attributes
+		@include transition(all 1.15s $easeOutQuint);
+		@include transition-delay(0.5s);
+		@include shiftY(100px);
+		opacity:0;
+
+		@include breakpoint(large) {
+			height:280px;
+		}
+
+		@include breakpoint(small) {
+			width:80%;
+		}
+
+		span.subtitle {
+			color:#aaaaaa;
+			display:block;
+			font-size:14px;
+			line-height:40px;
+			font-family:$primary-font-family; 
+			display:block;
+			letter-spacing:1px;
+			text-transform:uppercase;
+
+			@include breakpoint(large) {
+				margin-bottom:0px;
+			}
+		}
+	}
+
+	.title-slider {
+		height:140px;
+		width:100%;
+		position:relative;
+		margin-bottom:20px;
+
+		@include breakpoint(large) {
+			height:100px;
+		}
+
+		@include breakpoint(small) {
+			height:60px;
+		}
+
+		h1 {
+			@extend .position-top;
+			display:block;
+			width:100%;
+			height:100%;
+			color:#ffffff;
+			margin:0px;
+
+			span {
+				// animation attributes
+				@include transition(all 1.15s $easeOutQuint);
+				opacity:0;
+			}
+
+			@for $i from 1 through 20 {
+				span:nth-child(#{$i}) { 
+					@include transition-delay($i * 0.10s); 
+				}
+			} 
+		}
+	}
+
+	.scroll {
+		@extend .position-center;
+		@include border-radius(100%);
+		width:50px;
+		height:50px;
+		background:$red;
+		top:auto;
+		bottom:-50px;
+		overflow:hidden;
+
+		// animation attributes
+		@include transition(all 1.15s $easeOutQuint);
+		@include transition-delay(0.5s);
+		@include shiftY(100px);
+		opacity:0;
+
+		@include breakpoint(medium) {
+			bottom:-70px;
+		}
+
+		.btn-content {
+			width:100%;
+			height:100%;
+			display:inline-block;
+
+			// animation attributes
+			@include transition(all 1s $easeOutQuint);
+			@include shiftY(0px);
+			opacity:1;
+		}
+
+		.btn-hover {
+			@extend .position-top;
+			width:100%;
+			height:100%;
+			display:inline-block;
+
+			// animation attributes
+			@include transition(all 1s $easeOutQuint);
+			@include shiftY(-60px);
+			opacity:0;
+		}
+
+		svg {
+			width:100%;
+			height:100%;
+
+			path { fill:$white; }
+		}
+	}
+
+	.scroll:hover {
+		background:lighten($red,10%);
+		.btn-content {
+			@include shiftY(60px);
+			opacity:0;
+		}
+
+		.btn-hover {
+			@include shiftY(0px);
+			opacity:1;
+		}
+	}
+
+	.hero-waypoint {
+		@extend .position-top;
+		top:250px;
+		width:100%;
+	}
+
+	.vertical-line {
+		top:auto;
+		bottom:-150px;
+		z-index:10;
+
+		// animation attributes
+		@include transition(all 1.15s $easeOutQuint);
+		@include transition-delay(0.5s);
+		@include shiftY(100px);
+		opacity:0;
+
+		@include breakpoint(medium) {
+			bottom:-100px;
+		}
+	}
+}
+
+.animate-in {
+	.hero {
+		.vertical-line, .intro, .scroll {
+			@include shiftY(0px);
+			opacity:1;
+		}
+
+		.title-slider {
+			h1.active {
+				span { opacity:1; }
+			}
+		}
+	}
+}

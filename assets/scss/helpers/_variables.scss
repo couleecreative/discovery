@@ -1,0 +1,40 @@
+/* 
+
+-------------------------------------------------------------
+
+VARIABLES
+
+*/
+
+// Colors
+$black   : #000000;
+$white   : #ffffff;
+$red     : #b80013;
+$blue    : #19262d;
+
+// Font weights
+$regular : 400;
+$book    : 500;
+$medium  : 600;
+$bold    : 700;
+$xbold   : 800;
+
+// Primary Font
+$primary-font-family : 'open-sans', sans-serif;
+$primary-font-size   : 16px;
+$primary-font-color  : #777777;
+$primary-link-color  : $red;
+$primary-line-height : 30px;
+
+// Secondary Font
+$secondary-font-family : 'ff-meta-serif-web-pro', serif;
+
+// Transitions
+$default-transition-property : all;
+$default-transition-duration : 1s;
+$default-transition-function : false;
+$default-transition-delay    : false;
+
+// Easing
+$easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+$easeOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1.000); 

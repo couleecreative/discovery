@@ -1,0 +1,94 @@
+/* 
+
+-------------------------------------------------------------
+
+GLOBAL
+
+*/
+
+html, body { height:100%; }
+
+body { 
+	@include transition(all 0.55s $easeOutCubic);
+	padding:0px; 
+	margin:0px; 
+	background:#f4f4f4;
+
+	@include breakpoint(medium) { 
+		padding:0px; 
+	}
+}
+
+body.body-modal-open { overflow:hidden; }
+
+body.body-menu-active { 
+	overflow:hidden; 
+	background:$blue;
+
+	// .viewport {
+	// 	position:fixed;
+	// 	height:auto;
+	// 	overflow:hidden;
+	// 	width:50%;
+	// }
+}
+
+.viewport { 
+	overflow:hidden; 
+	width:1700px / 1800px * 100%;
+	margin:auto;
+
+	@include breakpoint(xlarge) {
+		width:1700px;
+		margin:auto;
+	}
+
+	@include breakpoint(small) {
+		width:100%;
+	}
+}
+
+.container { 
+	margin:auto; 
+	width:1200px; 
+	position:relative; 
+
+	@include breakpoint(large) { 
+		width:800px;
+	}
+
+	@include breakpoint(medium) {
+		width:650px;
+	}
+
+	@include breakpoint(small) {
+		width:80%;
+	}
+}
+
+/* general */
+
+img { max-width:100%; }
+
+.borderbox { 
+	box-sizing:border-box; 
+	-webkit-box-sizing:border-box; 
+	-moz-box-sizing:border-box; 
+}
+
+.position-center {
+	position:absolute;
+	bottom:0px;
+	top:0px;
+	right:0px;
+	left:0px;
+	margin:auto;
+}
+
+.hide-ipad {
+	@include breakpoint(medium) { display:none; }
+}
+
+.hide-mobile {
+	@include breakpoint(small) { display:none; }
+}

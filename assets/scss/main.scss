@@ -1,0 +1,39 @@
+/*
+Project Title: Discovery
+Author: Gene Ross
+Author URI: http://geneross.co
+*/
+
+/* Vendors */
+@import "vendors/owl";
+@import "vendors/animate";
+
+/* Helpers */
+@import "helpers/variables";
+@import "helpers/mixins";
+
+/* Base */
+@import "base/typography";
+@import "base/global";
+
+/* Components */
+@import "components/buttons";
+@import "components/nav-list";
+@import "components/owl";
+
+/* Layout */
+@import "layout/position";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/menu";
+@import "layout/columns";
+@import "layout/content-blocks";
+@import "layout/footer";
+
+/* Sections */
+@import "sections/hero";
+@import "sections/home-welcome";
+@import "sections/home-events";
+@import "sections/home-collaboration";
+@import "sections/home-research";
+@import "sections/home-gallery";

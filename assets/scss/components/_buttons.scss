@@ -1,0 +1,150 @@
+/* 
+
+-------------------------------------------------------------
+
+BUTTONS
+
+*/
+
+.btn {
+	@extend .borderbox;
+	font-weight:normal;
+	display:inline-block;
+	text-decoration:none;
+	text-transform:uppercase;
+	padding:0px 30px;
+	font-size:13px;
+	font-weight:$medium;
+	letter-spacing:1px;
+	overflow:hidden;
+	position:relative;
+	cursor:pointer;
+
+	 .btn-content {
+	 	display:inline-block;
+	 	position:relative;
+	 	z-index:0;
+	 }
+
+	 .btn-content:after {
+	 	@include transition(all 0.4s $easeOutCubic);
+	 	content:"";
+	 	display:block;
+	 	position:absolute;
+	 	left:-50%;
+	 	top:-150%;
+	 	background:darken($red,5%);
+	 	width:200%;
+	 	height:150%;
+	 	z-index:-1;
+	 }
+}
+
+.btn:hover {
+	.btn-content:after {
+		height:400%;
+		top:110%;
+	}
+}
+
+.btn-red {
+	@include border-radius(60px);
+	@extend .btn;
+	background:$red;
+	color:$white;
+	line-height:60px;
+}
+
+.btn-red:hover {
+	background:lighten($red,10%);
+}
+
+.btn-border {
+	@extend .btn;
+	@include border-radius(60px);
+	line-height:60px;
+	border:2px solid #e6e6e6;
+}
+
+.btn-arrow {
+	@extend .btn;
+	padding:0px;
+	line-height:35px;
+	font-weight:$bold;
+	color:$blue;
+
+	span.icon {
+		@include transition(all 0.5s $easeOutQuint);
+		@include border-radius(100%);
+		display:inline-block;
+		width:34px;
+		height:34px;
+		border:3px solid #e6e6e6;
+		vertical-align:top;
+		margin-right:15px;
+	}
+
+	.btn-content:after { display:none; }
+
+	svg {
+		@include transition(all 0.5s $easeOutQuint);
+		@include transform(rotate(-90deg));
+		width:34px;
+		height:34px;
+
+		path { fill:$red; }
+	}
+}
+
+.btn-arrow:hover {
+	color:$red;
+
+	span.icon {
+		background:$red;
+		border:3px solid $red;
+	}
+
+	svg { 
+		path { fill:$white; }
+	}
+}
+
+.btn-circle {
+	@include border-radius(100%);
+	height:60px;
+	width:60px;
+	display:inline-block;
+	border:3px solid #e6e6e6;
+
+	.btn-content {
+		width:100%;
+		height:100%;
+	}
+
+	svg, img {
+		path {
+			fill:#afafaf;
+		}
+	}
+}
+
+.btn-circle:hover {
+	background:$red;
+	border:3px solid $red;
+
+	svg, img {
+		path {
+			fill:$white;
+		}
+	}
+}
+
+.btn-line {
+	display:inline-block;
+	letter-spacing:1px;
+	font-size:13px;
+	line-height:50px;
+	font-weight:$bold;
+	border-bottom:3px solid #93000f;
+	color:#ffffff;
+}

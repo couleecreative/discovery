@@ -1,0 +1,126 @@
+/* 
+
+-------------------------------------------------------------
+
+GALLERY
+
+*/
+
+.gallery {
+	background:#f4f4f4;
+
+	@include breakpoint(small) { 
+			display:none;
+		}
+
+	.gallery-row {
+		@include clearfix;
+		position:relative;
+	}
+
+	.gallery-block {
+		width:20%;
+		float:left;
+		position:relative;
+		background-size:cover;
+
+		&:after {
+			padding-bottom:400px / 340px * 100%;
+			display:block;
+			content:'';
+		}
+	}
+
+	.block-wide {
+		width:40%;
+
+		&:after {
+			padding-bottom:400px / 680px * 100%;
+			display:block;
+			content:'';
+		}
+	}
+
+	.block-tall {
+		margin-top:340px / 400px * -27.7%;
+
+		&:after {
+			padding-bottom:800px / 340px * 100%;
+			display:block;
+			content:'';
+		}
+	}
+
+	.block-red {
+		background:$red;
+		color:$white;
+	}
+
+	.tagline {
+		@extend .position-center;
+		font-family:$secondary-font-family;
+		width:100%;
+		text-align:center;
+		height:30px;
+		line-height:30px;
+		font-size:24px;
+
+		@include breakpoint(large) { 
+			font-size:20px;
+		}
+
+		@include breakpoint(medium) { 
+			font-size:16px;
+		}
+	}
+
+	.gallery-slider {
+		width:100%;
+		text-align:center;
+		position:relative;
+		cursor:move;
+	}
+
+	.gallery-nav {
+		height:110px;
+		background:#f4f4f4;
+
+		.container { height:100%; }
+
+		.btn-circle {
+			@extend .position-center;
+			display:block;
+		}
+
+		.event-prev {
+			right:auto;
+
+			svg {
+				@include transform(rotate(90deg));
+			}
+		}
+
+		.event-next {
+			left:auto;
+
+			svg {
+				@include transform(rotate(-90deg));
+			}
+		}
+
+		.event-type-active, .event-type:hover { color:$blue; }
+	}
+}
+
+
+/*
+
+-------------------------------------------------------------
+
+ANIMATE GALLERY
+
+*/
+
+.animate-gallery {
+
+}

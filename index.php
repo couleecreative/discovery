@@ -35,7 +35,9 @@
 	</head>
 	
 	<body>
-	
+		
+		<div class="background">
+
 		<header class="header">
 
 			<div class="logo">
@@ -772,6 +774,8 @@
 			</div><!-- end .bottom -->
 
 		</footer><!-- end footer -->
+
+		</div><!-- end .background -->
 
 
 		<!-- Include Scripts -->

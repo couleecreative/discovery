@@ -23,14 +23,10 @@ body.body-modal-open { overflow:hidden; }
 
 body.body-menu-active { 
 	overflow:hidden; 
-	background:$blue;
-
-	// .viewport {
-	// 	position:fixed;
-	// 	height:auto;
-	// 	overflow:hidden;
-	// 	width:50%;
-	// }
+	
+	.background {
+		background:$blue;
+	}
 }
 
 .viewport { 
@@ -48,13 +44,18 @@ body.body-menu-active {
 	}
 }
 
+.background {
+	@include transition(all 0.55s $easeOutCubic);
+	background:#f4f4f4;
+}
+
 .container { 
 	margin:auto; 
 	width:1200px; 
 	position:relative; 
 
 	@include breakpoint(large) { 
-		width:800px;
+		width:800px / 1100px * 100%;
 	}
 
 	@include breakpoint(medium) {

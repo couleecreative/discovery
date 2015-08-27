@@ -47,6 +47,7 @@ body.body-menu-active {
 .background {
 	@include transition(all 0.55s $easeOutCubic);
 	background:#f4f4f4;
+	overflow:hidden;
 }
 
 .container { 

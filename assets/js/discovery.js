@@ -78,6 +78,8 @@ var Discovery = (function($) {
 		// owl slider properties
 		gallery.owlCarousel({ 
 			addClassActive : true,
+			scrollPerPage : true,
+			pagination : true,
 			itemsCustom : [[0, 1]]
 		});
 

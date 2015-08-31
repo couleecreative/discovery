@@ -30,6 +30,13 @@
           transform: $str; 
 }
 
+@mixin transform-origin($str) {
+  -webkit-transform-origin: $str;
+     -moz-transform-origin: $str;
+      -ms-transform-origin: $str;
+          transform-origin: $str; 
+}
+
 @mixin shiftY($px) {
   -webkit-transform: translate3d(0px,$px,0px);
      -moz-transform: translate3d(0px,$px,0px);

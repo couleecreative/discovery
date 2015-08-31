@@ -9,6 +9,7 @@ WELCOME
 .welcome {
 	background:#f4f4f4;
 	padding:200px 0px;
+	position:relative;
 
 	@include breakpoint(medium) {
 		padding-bottom:100px;
@@ -79,6 +80,27 @@ WELCOME
 			@include breakpoint(medium) {
 				bottom:-10%;
 			}
+		}
+	}
+
+	.vertical-text {
+		position:absolute;
+		top:850px;
+		text-align:right;
+
+		@include breakpoint(large) {
+			top:840px;
+		}
+	}
+
+	.vertical-text-bottom {
+		@include transform(rotate(90deg));
+		@include transform-origin(top right);
+		right:0px;
+		top:2450px;
+
+		@include breakpoint(large) {
+			top:2080px;
 		}
 	}
 }

@@ -301,6 +301,9 @@
 
 			<section class="welcome waypoint" data-class="animate-welcome">
 
+				<div class="vertical-text">GATHER  <span>—  A VIBRANT GATHERING PLACE</span></div>
+				<div class="vertical-text vertical-text-bottom">GATHER  <span>—  IN OUR TOWN CENTER</span></div>
+
 				<div class="container">
 
 					<div class="gather">
@@ -342,7 +345,7 @@
 							<p><b>330 N. Orchard St.  Madison, WI 53715</b></p>
 
 							<p>
-								<a href="" class="btn-arrow"><span class="icon"><img src="assets/img/icon-arrow.svg" alt="arrow" class="svg-raw"/></span><span class="btn-content">PLAN YOUR VISIT</span></a>
+								<a href="" class="btn-arrow"><span class="icon"><img src="assets/img/icon-arrow.svg" alt="arrow" class="svg-raw"/></span><span class="btn-content">PLAN</span></a>
 							</p>
 
 						</div><!-- end .copy -->
@@ -362,7 +365,7 @@
 							</p>
 
 							<p>
-								<a href="" class="btn-arrow"><span class="icon"><img src="assets/img/icon-arrow.svg" alt="arrow" class="svg-raw"/></span><span class="btn-content">LEARN MORE</span></a>
+								<a href="" class="btn-arrow"><span class="icon"><img src="assets/img/icon-arrow.svg" alt="arrow" class="svg-raw"/></span><span class="btn-content">RESERVE</span></a>
 							</p>
 
 						</div><!-- end .copy -->
@@ -568,6 +571,8 @@
 			</section><!-- end .collaboration -->
 
 			<section class="research waypoint" data-class="animate-research">
+
+				<div class="vertical-text">WORLD-CLASS  <span>—  TWO WORLD-CLASS INSTITUTES</span></div>
 
 				<div class="container">
 
